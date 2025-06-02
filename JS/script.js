@@ -476,4 +476,63 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePopup.style.display = 'none';
         }
     });
+    const form = document.getElementById('orderForm');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const steps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-steps .step');
+    let currentStep = 1;
+
+    // Function to update form step visibility and progress
+    function updateFormStep() {
+        steps.forEach(step => {
+            step.classList.toggle('active', step.dataset.step == currentStep);
+        });
+
+        progressSteps.forEach(step => {
+            step.classList.toggle('active', step.dataset.step == currentStep);
+        });
+
+        // Update button visibility
+        prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
+        nextBtn.style.display = currentStep === steps.length ? 'none' : 'inline-block';
+        submitBtn.style.display = currentStep === steps.length ? 'inline-block' : 'none';
+    }
+
+    // Next button click handler
+    nextBtn.addEventListener('click', () => {
+        if (currentStep < steps.length) {
+            // Basic validation for the current step
+            const currentInputs = steps[currentStep - 1].querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            currentInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+
+            if (isValid) {
+                currentStep++;
+                updateFormStep();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+    });
+
+    // Previous button click handler
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateFormStep();
+        }
+    });
+
+    // Initialize form
+    updateFormStep();
 });

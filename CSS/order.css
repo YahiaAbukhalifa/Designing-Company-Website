@@ -598,13 +598,13 @@ input[type="file"]::-webkit-file-upload-button:hover {
         padding: 14px 24px;
         font-size: 1rem;
     }
-}
-
-@media (max-width: 480px) {
     .progress-steps {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+@media (max-width: 480px) {
     
     .progress-steps::-webkit-scrollbar {
         height: 4px;

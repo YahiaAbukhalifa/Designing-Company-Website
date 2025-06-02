@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/homePage.css">
+    <title>HARMONY | HomePage</title>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+            <ul class="megaMenu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#projects" aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <ul class="submenu">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="./index.html#services" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="submenu">
+                        <li><a href="./index.html#services">Electrical Design</a></li>
+                        <li><a href="./index.html#services">Structural Design</a></li>
+                        <li><a href="./index.html#services">Architectural Design</a></li>
+                        <li><a href="./index.html#services">Projects Management</a></li>
+                        <li><a href="./index.html#services">Facade Design</a></li>
+                        <li><a href="./index.html#services">Mechanical Design</a></li>
+                        <li><a href="./index.html#services">Interior Design</a></li>
+                        <li><a href="./index.html#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+            <a href="./index.html#contact" class="contact-button">contact us</a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </nav>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-content">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+            <ul class="mobile-nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="mobile-menu-item" data-submenu="projects">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Projects</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-projects">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu-item" data-submenu="services">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Services</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-services">
+                        <li><a href="./index.html#services">Electrical Design</a></li>
+                        <li><a href="./index.html#services">Structural Design</a></li>
+                        <li><a href="./index.html#services">Architectural Design</a></li>
+                        <li><a href="./index.html#services">Projects Management</a></li>
+                        <li><a href="./index.html#services">Facade Design</a></li>
+                        <li><a href="./index.html#services">Mechanical Design</a></li>
+                        <li><a href="./index.html#services">Interior Design</a></li>
+                        <li><a href="./index.html#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+
+            <div class="mobile-nav-actions">
+                <a class="mobile-expert-btn" href="./index.html#contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero" id="hero">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+
+        <div class="text-hero">
+            <h1>Harmony Design</h1>
+            <h2>Harmony Design is a design brand that has surpassed the limits of excellence through its creativity and
+                ideas. Harmony Architectural and Interior Design has reached the taste of its customers by presenting
+                the art of design in its finest origins and different schools and eras</h2>
+
+            <div class="cta-container">
+                <a href="./projects.html" class="cta-btn primary-btn">
+                    <span>View Our Work</span>
+                </a>
+                <a href="./order.html" class="cta-btn">
+                    <span>Start Your Project</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" onclick="scrollToNext()">
+            <small>Scroll to explore</small>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <div class="section-badge">Our Expertise</div>
+                <h2 class="services-title">Engineering Excellence</h2>
+                <p class="services-subtitle">Comprehensive solutions that transform visions into reality through
+                    innovative design and meticulous execution</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Electrical Design</h3>
+                    <p>Advanced electrical systems design with cutting-edge technology integration, power distribution,
+                        and smart building solutions.</p>
+                    <ul class="service-features">
+                        <li>Power Distribution Systems</li>
+                        <li>Smart Building Integration</li>
+                        <li>Energy Efficiency Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Structural Design</h3>
+                    <p>Robust structural engineering solutions ensuring safety, durability, and optimal performance for
+                        all construction projects.</p>
+                    <ul class="service-features">
+                        <li>Seismic Analysis & Design</li>
+                        <li>Load Bearing Calculations</li>
+                        <li>Advanced Material Integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 21h18M3 7v1a3 3 0 003 3h12a3 3 0 003-3V7M5 21V7h14v14" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Architectural Design</h3>
+                    <p>Innovative architectural concepts that blend functionality with aesthetic excellence, creating
+                        spaces that inspire and endure.</p>
+                    <ul class="service-features">
+                        <li>Conceptual Design Development</li>
+                        <li>3D Visualization & Modeling</li>
+                        <li>Sustainable Design Practices</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="management">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h4a2 2 0 002-2v-7a2 2 0 00-2-2zM19 4h-4a2 2 0 00-2 2v14a2 2 0 002 2h4a2 2 0 002-2V6a2 2 0 00-2-2z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Projects Management</h3>
+                    <p>Strategic project oversight ensuring timely delivery, budget optimization, and quality control
+                        throughout the entire project lifecycle.</p>
+                    <ul class="service-features">
+                        <li>Timeline & Budget Management</li>
+                        <li>Quality Assurance Protocols</li>
+                        <li>Stakeholder Coordination</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Facade Design</h3>
+                    <p>Sophisticated facade solutions that harmonize architectural beauty with environmental performance
+                        and structural integrity.</p>
+                    <ul class="service-features">
+                        <li>Climate-Responsive Design</li>
+                        <li>Advanced Material Systems</li>
+                        <li>Energy Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Mechanical Design</h3>
+                    <p>Comprehensive mechanical systems engineering including HVAC, plumbing, and fire safety systems
+                        for optimal building performance.</p>
+                    <ul class="service-features">
+                        <li>HVAC System Design</li>
+                        <li>Plumbing & Fire Safety</li>
+                        <li>Energy Management Systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="design">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Transformative interior spaces that reflect brand identity while optimizing functionality,
+                        comfort, and user experience.</p>
+                    <ul class="service-features">
+                        <li>Space Planning & Layout</li>
+                        <li>Material & Finish Selection</li>
+                        <li>Lighting Design Integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-category="management">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Supervision</h3>
+                    <p>Expert on-site supervision ensuring construction quality, safety compliance, and adherence to
+                        design specifications and standards.</p>
+                    <ul class="service-features">
+                        <li>Construction Quality Control</li>
+                        <li>Safety Compliance Monitoring</li>
+                        <li>Technical Issue Resolution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <div class="cta-content">
+                    <h3>Ready to Transform Your Vision?</h3>
+                    <p>Let our engineering expertise bring your project to life with precision and innovation.</p>
+                    <a href="#contact" class="cta-button">
+                        <span>Start Your Project</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Projects Section -->
+    <section class="latest-projects" id="projects">
+        <div class="projects-container">
+            <div class="projects-header">
+                <div class="section-badge">Our Portfolio</div>
+                <h2 class="projects-title">Latest Projects</h2>
+                <p class="projects-subtitle">Discover our most recent architectural achievements showcasing innovation,
+                    creativity, and exceptional craftsmanship</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="official">
+                    <div class="project-image">
+                        <img src="./assets/project-O1.jpg" alt="Official Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category official">Official</div>
+                        <h3 class="project-name">Government Complex</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="residental">
+                    <div class="project-image">
+                        <img src="./assets/project-R1.jpg" alt="Residential Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category residental">Residential</div>
+                        <h3 class="project-name">Modern Villa</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="./assets/project-C1.jpg" alt="Commercial Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category commercial">Commercial</div>
+                        <h3 class="project-name">Business Center</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="interior">
+                    <div class="project-image">
+                        <img src="./assets/project-I1.jpg" alt="Interior Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category interior">Interior</div>
+                        <h3 class="project-name">Executive Office</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="residental">
+                    <div class="project-image">
+                        <img src="./assets/project-R2.jpg" alt="Residential Project 2" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category residental">Residential</div>
+                        <h3 class="project-name">Luxury Apartments</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="./assets/project-C2.jpg" alt="Commercial Project 2" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category commercial">Commercial</div>
+                        <h3 class="project-name">Shopping Mall</h3>
+                    </div>
+                </div>
+            </div>
+            <section class="stats-bar">
+                <div class="stats-container">
+                    <div class="stat-item" data-category="interior">
+                        <div class="stat-number">190+</div>
+                        <div class="stat-label">Interior</div>
+                    </div>
+                    <div class="stat-item" data-category="commercial">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Commercial</div>
+                    </div>
+                    <div class="stat-item" data-category="official">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Official</div>
+                    </div>
+                    <div class="stat-item" data-category="residential">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Residential</div>
+                    </div>
+                </div>
+            </section>
+            <div class="projects-cta">
+                <div class="cta-content">
+                    <h3>Explore Our Complete Portfolio</h3>
+                    <p>Discover more inspiring projects that showcase our commitment to architectural excellence and
+                        innovation.</p>
+                    <a href="./projects.html" class="cta-button">
+                        <span>View All Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="./assets/logo.png" alt="Harmony Design Logo">
+                        <h3>Harmony Design</h3>
+                    </div>
+                    <p class="footer-description">
+                        Transforming visions into architectural masterpieces through innovative design,
+                        exceptional craftsmanship, and unwavering commitment to excellence.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Architectural Design</a></li>
+                            <li><a href="#services">Interior Design</a></li>
+                            <li><a href="#services">Structural Design</a></li>
+                            <li><a href="#services">Electrical Design</a></li>
+                            <li><a href="#services">Mechanical Design</a></li>
+                            <li><a href="#services">Facade Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Projects</h4>
+                        <ul>
+                            <li><a href="./projects.html?category=residential">Residential</a></li>
+                            <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                            <li><a href="./projects.html?category=interior">Interior</a></li>
+                            <li><a href="./projects.html?category=official">Official</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="./about.html">About Us</a></li>
+                            <li><a href="#projects">Portfolio</a></li>
+                            <li><a href="#services">Our Process</a></li>
+                            <li><a href="#contact">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <div>
+                                    <span>123 Design Street</span>
+                                    <span>Damietta, Egypt</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                                        stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>+20 123 456 7890</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>info@harmonydesign.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest design insights and project updates</p>
+                </div>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-btn">
+                            <span>Subscribe</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Harmony Design. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Elements -->
+        <div class="footer-bg-element footer-bg-1"></div>
+        <div class="footer-bg-element footer-bg-2"></div>
+    </footer>
+
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>

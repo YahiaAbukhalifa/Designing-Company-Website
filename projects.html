@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/projects.css">
+    <title>HARMONY | Projects</title>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+            <ul class="megaMenu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#projects" aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <ul class="submenu">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#services" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="submenu">
+                        <li><a href="#services">Electrical Design</a></li>
+                        <li><a href="#services">Structural Design</a></li>
+                        <li><a href="#services">Architectural Design</a></li>
+                        <li><a href="#services">Projects Management</a></li>
+                        <li><a href="#services">Facade Design</a></li>
+                        <li><a href="#services">Mechanical Design</a></li>
+                        <li><a href="#services">Interior Design</a></li>
+                        <li><a href="#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+            <a href="./index.html#contact" class="contact-button">contact us</a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </nav>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-content">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+            <ul class="mobile-nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="mobile-menu-item" data-submenu="projects">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Projects</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-projects">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu-item" data-submenu="services">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Services</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-services">
+                        <li><a href="#services">Electrical Design</a></li>
+                        <li><a href="#services">Structural Design</a></li>
+                        <li><a href="#services">Architectural Design</a></li>
+                        <li><a href="#services">Projects Management</a></li>
+                        <li><a href="#services">Facade Design</a></li>
+                        <li><a href="#services">Mechanical Design</a></li>
+                        <li><a href="#services">Interior Design</a></li>
+                        <li><a href="#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+
+            <div class="mobile-nav-actions">
+                <a class="mobile-expert-btn" href="./index.html#contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="latest-projects" id="projects">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2 class="projects-title">Our Latest Projects</h2>
+                <p class="projects-subtitle">Explore our diverse portfolio of architectural masterpieces, from
+                    residential homes to commercial complexes</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residental">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="interior">Interior</button>
+                <button class="filter-btn" data-filter="official">Official</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <div class="project-card" data-category="official">
+                    <div class="project-image">
+                        <img src="./assets/project-O1.jpg" alt="Official Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category official">Official</div>
+                        <h3 class="project-name">Government Complex</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="residental">
+                    <div class="project-image">
+                        <img src="./assets/project-R1.jpg" alt="Residential Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category residental">Residential</div>
+                        <h3 class="project-name">Modern Villa</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="./assets/project-C1.jpg" alt="Commercial Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category commercial">Commercial</div>
+                        <h3 class="project-name">Business Center</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="interior">
+                    <div class="project-image">
+                        <img src="./assets/project-I1.jpg" alt="Interior Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category interior">Interior</div>
+                        <h3 class="project-name">Executive Office</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="residental">
+                    <div class="project-image">
+                        <img src="./assets/project-R2.jpg" alt="Residential Project 2" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category residental">Residential</div>
+                        <h3 class="project-name">Luxury Apartments</h3>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="./assets/project-C2.jpg" alt="Commercial Project 2" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category commercial">Commercial</div>
+                        <h3 class="project-name">Shopping Mall</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="projects-cta">
+                <h3>Ready to Start Your Project?</h3>
+                <p>Let's bring your architectural vision to life</p>
+                <a href="./order.html" class="cta-button">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Image Popup Modal -->
+        <div class="image-popup" id="imagePopup">
+            <span class="close-button" id="closePopup">&times;</span>
+            <img id="popupImage" src="" alt="Project Image">
+        </div>
+    </section>
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>

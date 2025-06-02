@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/order.css">
+    <title>HARMONY | Order</title>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+            <ul class="megaMenu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#projects" aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <ul class="submenu">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#services" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="submenu">
+                        <li><a href="#services">Electrical Design</a></li>
+                        <li><a href="#services">Structural Design</a></li>
+                        <li><a href="#services">Architectural Design</a></li>
+                        <li><a href="#services">Projects Management</a></li>
+                        <li><a href="#services">Facade Design</a></li>
+                        <li><a href="#services">Mechanical Design</a></li>
+                        <li><a href="#services">Interior Design</a></li>
+                        <li><a href="#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+            <a href="./index.html#contact" class="contact-button">contact us</a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </nav>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-content">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+            <ul class="mobile-nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="mobile-menu-item" data-submenu="projects">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Projects</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-projects">
+                        <li><a href="./projects.html?category=residental">Residental</a></li>
+                        <li><a href="./projects.html?category=commercial">Commercial</a></li>
+                        <li><a href="./projects.html?category=interior">Interior</a></li>
+                        <li><a href="./projects.html?category=official">Official</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu-item" data-submenu="services">
+                    <span class="mobile-menu-label" aria-haspopup="true" aria-expanded="false">Services</span>
+                    <svg class="mobile-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <ul class="mobile-submenu" id="mobile-submenu-services">
+                        <li><a href="#services">Electrical Design</a></li>
+                        <li><a href="#services">Structural Design</a></li>
+                        <li><a href="#services">Architectural Design</a></li>
+                        <li><a href="#services">Projects Management</a></li>
+                        <li><a href="#services">Facade Design</a></li>
+                        <li><a href="#services">Mechanical Design</a></li>
+                        <li><a href="#services">Interior Design</a></li>
+                        <li><a href="#services">Supervision</a></li>
+                    </ul>
+                </li>
+                <li><a href="./order.html">Order</a></li>
+            </ul>
+
+            <div class="mobile-nav-actions">
+                <a class="mobile-expert-btn" href="./index.html#contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Section -->
+    <section class="order-section">
+        <div class="order-container">
+            <div class="order-header">
+                <h1 class="order-title">Place Your Order</h1>
+                <p class="order-subtitle">Fill out the form below to get started with your project</p>
+            </div>
+
+            <form class="order-form" id="orderForm">
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">
+                            <span class="step-number">1</span>
+                        </div>
+                        <span class="step-label">Contact Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">
+                            <span class="step-number">2</span>
+                        </div>
+                        <span class="step-label">Project Type</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">
+                            <span class="step-number">3</span>
+                        </div>
+                        <span class="step-label">Service Type</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-circle">
+                            <span class="step-number">4</span>
+                        </div>
+                        <span class="step-label">Project Details</span>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-circle">
+                            <span class="step-number">5</span>
+                        </div>
+                        <span class="step-label">Project Status</span>
+                    </div>
+                    <div class="step" data-step="6">
+                        <div class="step-circle">
+                            <span class="step-number">6</span>
+                        </div>
+                        <span class="step-label">Basic Info</span>
+                    </div>
+                </div>
+
+                <!-- Form Steps -->
+                <div class="form-steps">
+
+                    <!-- Step 1: Contact Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-title">Contact Information</h3>
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="familyName">Family Name <span class="required">*</span></label>
+                            <input type="text" id="familyName" name="familyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Project Type -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-title">Project Type</h3>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="residential" name="projectType" value="residential">
+                                <label for="residential">
+                                    <span class="radio-custom"></span>
+                                    Residential
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="commercial" name="projectType" value="commercial">
+                                <label for="commercial">
+                                    <span class="radio-custom"></span>
+                                    Commercial
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="interior" name="projectType" value="interior">
+                                <label for="interior">
+                                    <span class="radio-custom"></span>
+                                    Interior
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="official" name="projectType" value="official">
+                                <label for="official">
+                                    <span class="radio-custom"></span>
+                                    Official
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Service Type -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="step-title">Service Type</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="electrical" name="serviceType" value="electrical">
+                                <label for="electrical">
+                                    <span class="checkbox-custom"></span>
+                                    Electrical Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="structural" name="serviceType" value="structural">
+                                <label for="structural">
+                                    <span class="checkbox-custom"></span>
+                                    Structural Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="architectural" name="serviceType" value="architectural">
+                                <label for="architectural">
+                                    <span class="checkbox-custom"></span>
+                                    Architectural Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="projectManagement" name="serviceType"
+                                    value="projectManagement">
+                                <label for="projectManagement">
+                                    <span class="checkbox-custom"></span>
+                                    Project Management
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="facade" name="serviceType" value="facade">
+                                <label for="facade">
+                                    <span class="checkbox-custom"></span>
+                                    Facade Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="mechanical" name="serviceType" value="mechanical">
+                                <label for="mechanical">
+                                    <span class="checkbox-custom"></span>
+                                    Mechanical Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="interiorDesign" name="serviceType" value="interiorDesign">
+                                <label for="interiorDesign">
+                                    <span class="checkbox-custom"></span>
+                                    Interior Design
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="supervision" name="serviceType" value="supervision">
+                                <label for="supervision">
+                                    <span class="checkbox-custom"></span>
+                                    Supervision
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Project Details -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="step-title">Project Details</h3>
+                        <div class="form-group">
+                            <label for="floors">Number of Floors</label>
+                            <select id="floors" name="floors">
+                                <option value="">Select number of floors</option>
+                                <option value="1">1 Floor</option>
+                                <option value="2">2 Floors</option>
+                                <option value="3">3 Floors</option>
+                                <option value="4">4 Floors</option>
+                                <option value="5+">5+ Floors</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Total Area (m²)</label>
+                            <input type="number" id="area" name="area" placeholder="Enter total area">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Project Location</label>
+                            <input type="text" id="location" name="location" placeholder="Enter project location">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-50k">Under $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="100k-250k">$100,000 - $250,000</option>
+                                <option value="250k-500k">$250,000 - $500,000</option>
+                                <option value="over-500k">Over $500,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Project Status -->
+                    <div class="form-step" data-step="5">
+                        <h3 class="step-title">Project Status</h3>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="planning" name="projectStatus" value="planning">
+                                <label for="planning">
+                                    <span class="radio-custom"></span>
+                                    Planning Phase
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="design" name="projectStatus" value="design">
+                                <label for="design">
+                                    <span class="radio-custom"></span>
+                                    Design Phase
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="construction" name="projectStatus" value="construction">
+                                <label for="construction">
+                                    <span class="radio-custom"></span>
+                                    Ready for Construction
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="renovation" name="projectStatus" value="renovation">
+                                <label for="renovation">
+                                    <span class="radio-custom"></span>
+                                    Renovation Project
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Basic Information -->
+                    <div class="form-step" data-step="6">
+                        <h3 class="step-title">Additional Information</h3>
+                        <div class="form-group">
+                            <label for="timeline">Project Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="urgent">Urgent (1-2 months)</option>
+                                <option value="normal">Normal (3-6 months)</option>
+                                <option value="flexible">Flexible (6+ months)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Project Description</label>
+                            <textarea id="description" name="description" rows="5"
+                                placeholder="Please describe your project requirements and any specific needs..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="referenceFiles">Reference Files (Optional)</label>
+                            <input type="file" id="referenceFiles" name="referenceFiles" multiple
+                                accept=".pdf,.jpg,.jpeg,.png,.dwg">
+                            <small>You can upload plans, sketches, or reference images</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Form Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="prevBtn"
+                        style="display: none;">Previous</button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit
+                        Order</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('orderForm');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-steps .step');
+            let currentStep = 1;
+
+            // Function to update form step visibility and progress
+            function updateFormStep() {
+                steps.forEach(step => {
+                    step.classList.toggle('active', step.dataset.step == currentStep);
+                });
+
+                progressSteps.forEach(step => {
+                    step.classList.toggle('active', step.dataset.step == currentStep);
+                });
+
+                // Update button visibility
+                prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
+                nextBtn.style.display = currentStep === steps.length ? 'none' : 'inline-block';
+                submitBtn.style.display = currentStep === steps.length ? 'inline-block' : 'none';
+            }
+
+            // Next button click handler
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < steps.length) {
+                    // Basic validation for the current step
+                    const currentInputs = steps[currentStep - 1].querySelectorAll('input[required], select[required]');
+                    let isValid = true;
+
+                    currentInputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('error');
+                        } else {
+                            input.classList.remove('error');
+                        }
+                    });
+
+                    if (isValid) {
+                        currentStep++;
+                        updateFormStep();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                }
+            });
+
+            // Previous button click handler
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateFormStep();
+                }
+            });
+
+            // Initialize form
+            updateFormStep();
+        });
+    </script>
+
+</body>
+
+</html>

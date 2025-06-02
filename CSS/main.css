@@ -1,0 +1,36 @@
+:root{
+    --bg-body: #010314;
+    --text-color: #dfe1f4;
+    --font-family:"Roboto", sans-serif;
+    --main-color: #a29272;
+    --card-bg: rgba(162, 146, 114, 0.08);
+    --card-border: rgba(162, 146, 114, 0.2);
+    --gradient-accent: linear-gradient(135deg, rgba(162, 146, 114, 0.1) 0%, rgba(162, 146, 114, 0.05) 100%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+body{
+    font-family: var(--font-family);
+    background-color: var(--bg-body);
+    background-position: top, bottom;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: var(--text-color);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-rendering: optimizeLegibility;
+}

@@ -353,6 +353,93 @@
         </div>
     </section>
     <script src="./JS/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const imagePopup = document.getElementById('imagePopup');
+            const popupImage = document.getElementById('popupImage');
+            const closePopup = document.getElementById('closePopup');
+
+            // Function to apply filter
+            function applyFilter(filterValue) {
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-filter') === filterValue);
+                });
+
+                // Filter project cards
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.6s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Get category from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialCategory = urlParams.get('category') || 'all';
+
+            // Apply initial filter based on URL
+            applyFilter(initialCategory);
+
+            // Filter button click handlers
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Update URL without reloading the page
+                    const newUrl = filterValue === 'all'
+                        ? 'projects.html'
+                        : `projects.html?category=${filterValue}`;
+                    history.pushState({}, '', newUrl);
+
+                    // Apply filter
+                    applyFilter(filterValue);
+                });
+            });
+
+            // Popup functionality
+            const zoomIcons = document.querySelectorAll('.project-overlay-content svg');
+            zoomIcons.forEach(icon => {
+                icon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectCard = icon.closest('.project-card');
+                    const projectImage = projectCard.querySelector('.project-image img');
+                    popupImage.src = projectImage.src;
+                    imagePopup.style.display = 'flex';
+                });
+            });
+
+            // Close popup handlers
+            closePopup.addEventListener('click', () => {
+                imagePopup.style.display = 'none';
+            });
+
+            imagePopup.addEventListener('click', (e) => {
+                if (e.target === imagePopup) {
+                    imagePopup.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && imagePopup.style.display === 'flex') {
+                    imagePopup.style.display = 'none';
+                }
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', () => {
+                const params = new URLSearchParams(window.location.search);
+                const category = params.get('category') || 'all';
+                applyFilter(category);
+            });
+        });
+    </script>
 </body>
 
 </html>

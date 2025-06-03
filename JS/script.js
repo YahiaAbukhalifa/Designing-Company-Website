@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
     // Desktop menu functionality
     const menuItems = document.querySelectorAll('.megaMenu > li.has-submenu');
     let activeSubmenu = null;
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile menu functionality remains unchanged
+    // Mobile menu functionality
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileNavOverlay = document.getElementById('mobileNavOverlay');
     const body = document.body;
@@ -156,6 +157,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to remove all mobile animation classes
     const removeMobileAnimationClasses = (submenu) => {
         submenu.classList.remove('submenu-enter', 'submenu-exit', 'submenu-slide-left-to-right', 'submenu-slide-right-to-left');
+    };
+
+    // Function to close mobile menu and submenus
+    const closeMobileMenu = () => {
+        mobileToggle.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        body.style.overflow = '';
+
+        if (activeMobileSubmenu) {
+            removeMobileAnimationClasses(activeMobileSubmenu);
+            activeMobileSubmenu.classList.remove('active');
+            lastHoveredMobileMenu?.classList.remove('active');
+            activeMobileSubmenu = null;
+            lastHoveredMobileMenu = null;
+        }
     };
 
     // Mobile submenu functionality
@@ -242,11 +258,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close main mobile menu
             if (e.target === mobileNavOverlay) {
-                mobileToggle.classList.remove('active');
-                mobileNavOverlay.classList.remove('active');
-                body.style.overflow = '';
+                closeMobileMenu();
             }
         }
+    });
+
+    // Close mobile menu when clicking any link within mobileNavOverlay
+    const mobileLinks = mobileNavOverlay.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Allow default link behavior (e.g., navigation or anchor scrolling)
+            // Close the mobile menu and submenus
+            closeMobileMenu();
+        });
     });
 
     // Toggle mobile menu
@@ -254,18 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isActive = mobileToggle.classList.contains('active');
 
         if (isActive) {
-            // Close menu and any active submenus
-            mobileToggle.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            body.style.overflow = '';
-
-            if (activeMobileSubmenu) {
-                removeMobileAnimationClasses(activeMobileSubmenu);
-                activeMobileSubmenu.classList.remove('active');
-                lastHoveredMobileMenu?.classList.remove('active');
-                activeMobileSubmenu = null;
-                lastHoveredMobileMenu = null;
-            }
+            closeMobileMenu();
         } else {
             // Open menu
             mobileToggle.classList.add('active');
@@ -277,17 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile menu on window resize if screen becomes large
     window.addEventListener('resize', () => {
         if (window.innerWidth > 968) {
-            mobileToggle.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            body.style.overflow = '';
-
-            if (activeMobileSubmenu) {
-                removeMobileAnimationClasses(activeMobileSubmenu);
-                activeMobileSubmenu.classList.remove('active');
-                lastHoveredMobileMenu?.classList.remove('active');
-                activeMobileSubmenu = null;
-                lastHoveredMobileMenu = null;
-            }
+            closeMobileMenu();
         }
     });
 
@@ -299,17 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle escape key to close mobile menu
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
-            mobileToggle.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            body.style.overflow = '';
-
-            if (activeMobileSubmenu) {
-                removeMobileAnimationClasses(activeMobileSubmenu);
-                activeMobileSubmenu.classList.remove('active');
-                lastHoveredMobileMenu?.classList.remove('active');
-                activeMobileSubmenu = null;
-                lastHoveredMobileMenu = null;
-            }
+            closeMobileMenu();
         }
     });
 });
@@ -322,32 +315,6 @@ function scrollToNext() {
     });
 }
 
-// Parallax effect on scroll
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.shape');
-
-    shapes.forEach((shape, index) => {
-        const speed = 0.5 + (index * 0.1);
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// Mouse movement effect
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-
-    const shapes = document.querySelectorAll('.shape');
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.02;
-        const x = (mouseX - 0.5) * speed * 100;
-        const y = (mouseY - 0.5) * speed * 100;
-
-        shape.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
-
 // Add hover effect to CTA buttons
 const ctaButtons = document.querySelectorAll('.cta-btn');
 ctaButtons.forEach(btn => {
@@ -358,181 +325,4 @@ ctaButtons.forEach(btn => {
     btn.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
-});
-// Select all project cards
-const projectCards = document.querySelectorAll('.project-card');
-
-// Create popup container
-const popup = document.createElement('div');
-popup.classList.add('image-popup');
-
-// Create close button
-const closeButton = document.createElement('span');
-closeButton.classList.add('close-button');
-closeButton.innerHTML = '&times;'; // HTML entity for '×'
-popup.appendChild(closeButton);
-
-// Create image element for popup
-const popupImage = document.createElement('img');
-popup.appendChild(popupImage);
-
-// Append popup to body
-document.body.appendChild(popup);
-
-// Add click event to each project card's overlay
-projectCards.forEach(card => {
-    const overlay = card.querySelector('.project-overlay');
-    const image = card.querySelector('.project-image img');
-
-    overlay.addEventListener('click', () => {
-        // Set the popup image source
-        popupImage.src = image.src;
-        popupImage.alt = image.alt;
-        // Show the popup
-        popup.style.display = 'flex';
-    });
-});
-
-// Add click event to close button
-closeButton.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
-
-// Close popup when clicking outside the image
-popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.style.display = 'none';
-    }
-});
-
-// Optional: Close popup with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.style.display === 'flex') {
-        popup.style.display = 'none';
-    }
-});
-// Filter functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-
-        const filterValue = button.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeInUp 0.6s ease-out';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    // Get all SVG elements within project-overlay-content
-    const zoomIcons = document.querySelectorAll('.project-overlay-content svg');
-    const imagePopup = document.getElementById('imagePopup');
-    const popupImage = document.getElementById('popupImage');
-    const closePopup = document.getElementById('closePopup');
-
-    // Add click event listener to each zoom icon
-    zoomIcons.forEach(icon => {
-        icon.addEventListener('click', (e) => {
-            // Prevent default behavior
-            e.preventDefault();
-
-            // Get the parent project card and its image
-            const projectCard = icon.closest('.project-card');
-            const projectImage = projectCard.querySelector('.project-image img');
-
-            // Set the popup image source
-            popupImage.src = projectImage.src;
-
-            // Show the popup
-            imagePopup.style.display = 'flex';
-        });
-    });
-
-    // Close popup when clicking the close button
-    closePopup.addEventListener('click', () => {
-        imagePopup.style.display = 'none';
-    });
-
-    // Close popup when clicking outside the image
-    imagePopup.addEventListener('click', (e) => {
-        if (e.target === imagePopup) {
-            imagePopup.style.display = 'none';
-        }
-    });
-
-    // Close popup with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && imagePopup.style.display === 'flex') {
-            imagePopup.style.display = 'none';
-        }
-    });
-    const form = document.getElementById('orderForm');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const submitBtn = document.getElementById('submitBtn');
-    const steps = document.querySelectorAll('.form-step');
-    const progressSteps = document.querySelectorAll('.progress-steps .step');
-    let currentStep = 1;
-
-    // Function to update form step visibility and progress
-    function updateFormStep() {
-        steps.forEach(step => {
-            step.classList.toggle('active', step.dataset.step == currentStep);
-        });
-
-        progressSteps.forEach(step => {
-            step.classList.toggle('active', step.dataset.step == currentStep);
-        });
-
-        // Update button visibility
-        prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-block';
-        nextBtn.style.display = currentStep === steps.length ? 'none' : 'inline-block';
-        submitBtn.style.display = currentStep === steps.length ? 'inline-block' : 'none';
-    }
-
-    // Next button click handler
-    nextBtn.addEventListener('click', () => {
-        if (currentStep < steps.length) {
-            // Basic validation for the current step
-            const currentInputs = steps[currentStep - 1].querySelectorAll('input[required], select[required]');
-            let isValid = true;
-
-            currentInputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('error');
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-
-            if (isValid) {
-                currentStep++;
-                updateFormStep();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-    });
-
-    // Previous button click handler
-    prevBtn.addEventListener('click', () => {
-        if (currentStep > 1) {
-            currentStep--;
-            updateFormStep();
-        }
-    });
-
-    // Initialize form
-    updateFormStep();
 });

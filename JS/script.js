@@ -305,6 +305,121 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMobileMenu();
         }
     });
+
+    // Scroll Popup JavaScript
+    (function () {
+        'use strict';
+
+        // Configuration
+        const SCROLL_DURATION = 5000; // 5 seconds in milliseconds
+        const POPUP_SHOWN_KEY = 'yahiaScrollPopupShown';
+
+        // State variables
+        let scrollStartTime = null;
+        let isScrolling = false;
+        let scrollTimer = null;
+        let popupShown = sessionStorage.getItem(POPUP_SHOWN_KEY) === 'true';
+
+        // Get popup elements
+        const overlay = document.getElementById('yahiaScrollPopupOverlay');
+        const closeButton = document.getElementById('yahiaScrollPopupClose');
+
+        // Show popup
+        function showPopup() {
+            if (popupShown || !overlay) return;
+
+            overlay.classList.add('yahia-popup-active');
+            popupShown = true;
+            sessionStorage.setItem(POPUP_SHOWN_KEY, 'true');
+        }
+
+        // Hide popup
+        function hidePopup() {
+            if (overlay) {
+                overlay.classList.remove('yahia-popup-active');
+            }
+        }
+
+        // Add event listeners for closing popup
+        function addCloseEventListeners() {
+            if (closeButton) {
+                closeButton.addEventListener('click', hidePopup, { once: true });
+            }
+
+            if (overlay) {
+                overlay.addEventListener('click', function (e) {
+                    if (e.target === overlay) {
+                        hidePopup();
+                    }
+                }, { once: true });
+            }
+
+            // Close with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay && overlay.classList.contains('yahia-popup-active')) {
+                    hidePopup();
+                }
+            }, { once: true });
+        }
+
+        // Handle scroll events
+        function handleScroll() {
+            if (popupShown) return;
+
+            const currentTime = Date.now();
+
+            if (!isScrolling) {
+                scrollStartTime = currentTime;
+                isScrolling = true;
+            }
+
+            // Clear existing timer
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+
+            // Check if user has been scrolling for the required duration
+            if (currentTime - scrollStartTime >= SCROLL_DURATION) {
+                showPopup();
+                isScrolling = false;
+                scrollStartTime = null;
+                return;
+            }
+
+            // Reset scrolling state if no scroll for 200ms
+            scrollTimer = setTimeout(function () {
+                isScrolling = false;
+                scrollStartTime = null;
+            }, 200);
+        }
+
+        // Throttle function to limit scroll event frequency
+        function throttle(func, limit) {
+            let inThrottle;
+            return function () {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => (inThrottle = false), limit);
+                }
+            };
+        }
+
+        // Initialize popup
+        function initPopup() {
+            if (overlay && closeButton) {
+                addCloseEventListeners();
+                const throttledScrollHandler = throttle(handleScroll, 100);
+                window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+                window.addEventListener('touchmove', throttledScrollHandler, { passive: true });
+            }
+        }
+
+        // Initialize when DOM is ready
+        initPopup();
+    })();
 });
 
 // Smooth scroll function

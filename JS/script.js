@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'use strict';
 
         // Configuration
-        const SCROLL_DURATION = 5000; // 5 seconds in milliseconds
+        const SCROLL_DURATION = 3000; // 5 seconds in milliseconds
         const POPUP_SHOWN_KEY = 'yahiaScrollPopupShown';
 
         // State variables
